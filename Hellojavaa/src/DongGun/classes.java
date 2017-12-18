@@ -75,9 +75,8 @@ public class classes {
 		System.out.println(cat.type);
 
 		// 회원가입
-		// Member m = new Member();
-		// m = new Member("lee donggun", "121212", "dong gun", "ehdrjs558@naver.com", "
-		// 2017-12-15");
+		Member m = new Member();
+		m = new Member("lee donggun", "121212", "dong gun", "ehdrjs558@naver.com", "2017-12-15");
 
 		// SungjukV0 클래스를 이용하기
 		// getter setter 을이용한
