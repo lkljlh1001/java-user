@@ -1,9 +1,7 @@
 package DongGun.lab;
 
-/**
- * @author DJA
- *
- */
+// 데이터 베이스
+
 public class SungJuckV0 {
 	// vo클래스 만들기
 	// vo클래스 - value object

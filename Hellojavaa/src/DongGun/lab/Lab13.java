@@ -2,27 +2,53 @@ package DongGun.lab;
 
 public class Lab13 {
 
-	// 프린트 37, 38 , 39
+	public static void main(String[] args) {
+
+		// 37 Person
+
+		Person 혜교 = new Person(); // 초기화
+		System.out.println(혜교);
+
+		Person 지현 = new Person("지현", "인천", "010 214 1231"); // 초기화 한값에 대입
+		System.out.println(지현);
+
+		// 38 Book
+
+		Book 자바정석 = new Book();
+		System.out.println(자바정석);
+
+		Book 자바정석심화 = new Book("자바정석심화", 210, "남궁성");
+		System.out.println(자바정석심화);
+
+		// 39
+
+		// 프린트 37, 38 , 39
+	}
 
 }
 
+// 37 person ☆☆☆☆☆
 class Person {
+	// 멤버변수 선언
+	private String name;
+	private String adr;
+	private String phnum;
 
-	String name;
-	String adr;
-	String phnum;
-
+	// 생성자
 	public Person() {
-		// TODO Auto-generated constructor stub
+		this("혜교", "서울", "123-4567");
+
 	}
 
 	public Person(String name, String adr, String phnum) {
-		super();
+
 		this.name = name;
 		this.adr = adr;
 		this.phnum = phnum;
+
 	}
 
+	// setter / getter
 	public String getName() {
 		return name;
 	}
@@ -45,27 +71,49 @@ class Person {
 
 	public void setPhnum(String phnum) {
 		this.phnum = phnum;
+	}
+
+	// to String
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", adr=" + adr + ", phnum=" + phnum + "]";
 	}
 
 }// end Person
 
 class Customer {
-	String name;
-	String adr;
-	String phnum;
-	String numofcust; // 고객 번호
-	String mils;// 마일리지
+	private int numofcust; // 고객 번호
+	private int mils;// 마일리지
+	private String name;
+	private String adr;
+	private String phnum;
 
 	public Customer() {
-		// TODO Auto-generated constructor stub
+		this(1, 1000, "혜교", "서울", "123-123"); // 초기화 값
 	}
 
-	public Customer(String name, String adr, String phnum, String numofcust, String mils) {
+	public Customer(int numofcust, int mils, String name, String adr, String phnum) {
 		super();
+		this.numofcust = numofcust;
+		this.mils = mils;
 		this.name = name;
 		this.adr = adr;
 		this.phnum = phnum;
+	}
+
+	public int getNumofcust() {
+		return numofcust;
+	}
+
+	public void setNumofcust(int numofcust) {
 		this.numofcust = numofcust;
+	}
+
+	public int getMils() {
+		return mils;
+	}
+
+	public void setMils(int mils) {
 		this.mils = mils;
 	}
 
@@ -93,30 +141,23 @@ class Customer {
 		this.phnum = phnum;
 	}
 
-	public String getNumofcust() {
-		return numofcust;
+	@Override
+	public String toString() {
+		return "Customer [numofcust=" + numofcust + ", mils=" + mils + ", name=" + name + ", adr=" + adr + ", phnum="
+				+ phnum + "]";
 	}
 
-	public void setNumofcust(String numofcust) {
-		this.numofcust = numofcust;
-	}
-
-	public String getMils() {
-		return mils;
-	}
-
-	public void setMils(String mils) {
-		this.mils = mils;
-	}
 }
 
+// 프린트 38
 class Book {
-	String title;// 제목
-	int page;
-	String writer;
+	private String title;// 제목
+	private int page;
+	private String writer;
 
 	public Book() {
-		// TODO Auto-generated constructor stub
+
+		this("자바정석", 20, "남궁성"); // 초기값
 	}
 
 	public Book(String title, int page, String writer) {
@@ -149,16 +190,30 @@ class Book {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
+
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", page=" + page + ", writer=" + writer + "]";
+	}
+
 }
 
 class Magazine {
-	String title;// 제목
-	int page;
-	String writer;
-	String ballmail;
+	private String title;// 제목
+	private int page;
+	private String writer;
+	private String ballMail;
 
 	public Magazine() {
-		// TODO Auto-generated constructor stub
+		this("자바정석", 20, "남궁성", "2017-12");
+	}
+
+	public Magazine(String title, int page, String writer, String ballMail) {
+		super();
+		this.title = title;
+		this.page = page;
+		this.writer = writer;
+		this.ballMail = ballMail;
 	}
 
 	public String getTitle() {
@@ -185,25 +240,32 @@ class Magazine {
 		this.writer = writer;
 	}
 
-	public String getBallmail() {
-		return ballmail;
+	public String getBallMail() {
+		return ballMail;
 	}
 
-	public void setBallmail(String ballmail) {
-		this.ballmail = ballmail;
+	public void setBallMail(String ballMail) {
+		this.ballMail = ballMail;
 	}
+
+	@Override
+	public String toString() {
+		return "Magazine [title=" + title + ", page=" + page + ", writer=" + writer + ", ballMail=" + ballMail + "]";
+	}
+
 }
 
+// 프린트 39
 class Phone {
-	String maker;
-	String pric; // 가격
-	String cmncType; // 통신타입
+	private String maker;
+	private int pric; // 가격
+	private String cmncType; // 통신타입
 
 	public Phone() {
-		// TODO Auto-generated constructor stub
+		this("엘지", 10000, "4G");
 	}
 
-	public Phone(String maker, String pric, String cmncType) {
+	public Phone(String maker, int pric, String cmncType) {
 		super();
 		this.maker = maker;
 		this.pric = pric;
@@ -218,11 +280,11 @@ class Phone {
 		this.maker = maker;
 	}
 
-	public String getPric() {
+	public int getPric() {
 		return pric;
 	}
 
-	public void setPric(String pric) {
+	public void setPric(int pric) {
 		this.pric = pric;
 	}
 
@@ -234,30 +296,37 @@ class Phone {
 		this.cmncType = cmncType;
 	}
 
+	@Override
+	public String toString() {
+		return "Phone [maker=" + maker + ", pric=" + pric + ", cmncType=" + cmncType + "]";
+	}
+
 }
 
 class SmartPhone {
 
-	String maker;
-	String pric; // 가격
-	String cmncType; // 통신타입
-	String osv; // 운영체제버젼
-	boolean isCamera;
-	boolean isTooth; // 블루투스
+	private String maker;
+	private int pric; // 가격
+	private String cmncType; // 통신타입
+	private String osv; // 운영체제버젼
+	private String memorySize;
+	private boolean isCamera;
+	private boolean isBluetooth;
 
 	public SmartPhone() {
-		// TODO Auto-generated constructor stub
-
+		this("삼성", 200000, "5G", "안드로이드", "4기가", true, true);
 	}
 
-	public SmartPhone(String maker, String pric, String cmncType, String osv, boolean isCamera, boolean isTooth) {
+	public SmartPhone(String maker, int pric, String cmncType, String osv, String memorySize, boolean isCamera,
+			boolean isBluetooth) {
 		super();
 		this.maker = maker;
 		this.pric = pric;
 		this.cmncType = cmncType;
 		this.osv = osv;
+		this.memorySize = memorySize;
 		this.isCamera = isCamera;
-		this.isTooth = isTooth;
+		this.isBluetooth = isBluetooth;
 	}
 
 	public String getMaker() {
@@ -268,11 +337,11 @@ class SmartPhone {
 		this.maker = maker;
 	}
 
-	public String getPric() {
+	public int getPric() {
 		return pric;
 	}
 
-	public void setPric(String pric) {
+	public void setPric(int pric) {
 		this.pric = pric;
 	}
 
@@ -292,6 +361,14 @@ class SmartPhone {
 		this.osv = osv;
 	}
 
+	public String getMemorySize() {
+		return memorySize;
+	}
+
+	public void setMemorySize(String memorySize) {
+		this.memorySize = memorySize;
+	}
+
 	public boolean isCamera() {
 		return isCamera;
 	}
@@ -300,12 +377,18 @@ class SmartPhone {
 		this.isCamera = isCamera;
 	}
 
-	public boolean isTooth() {
-		return isTooth;
+	public boolean isBluetooth() {
+		return isBluetooth;
 	}
 
-	public void setTooth(boolean isTooth) {
-		this.isTooth = isTooth;
+	public void setBluetooth(boolean isBluetooth) {
+		this.isBluetooth = isBluetooth;
+	}
+
+	@Override
+	public String toString() {
+		return "SmartPhone [maker=" + maker + ", pric=" + pric + ", cmncType=" + cmncType + ", osv=" + osv
+				+ ", memorySize=" + memorySize + ", isCamera=" + isCamera + ", isBluetooth=" + isBluetooth + "]";
 	}
 
 }

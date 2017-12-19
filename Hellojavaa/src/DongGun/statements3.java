@@ -2,7 +2,7 @@ package DongGun;
 
 import java.util.Scanner;
 
-public class statements03 {
+public class statements3 {
 
 	public static void main(String[] args) {
 

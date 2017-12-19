@@ -11,9 +11,9 @@ public class Statements1 {
 		 * (조건식 2) {참일떄} else if (조건식 3) {참일떄} else { 거짓일때 }
 		 */
 
-		if (3 > 5) {
-			System.out.println("3은 5보다 크다 ???");
-		}
+		// if (3 > 5) {
+		// System.out.println("3은 5보다 크다 ???");
+		// }
 
 		int tot = 99 + 98 + 99;
 		if (tot > 270) {
@@ -100,11 +100,12 @@ public class Statements1 {
 				grd = '가';
 
 			System.out.println(grd);
+			System.out.println();
 
 			// 애매모호한 if문
 			String grds = "";
 			if (avg >= 90) {
-				if (avg >= 96)
+				if (avg <= 96)
 					grds = "A+";
 			} else
 				grds = "A0 또는 A-";
