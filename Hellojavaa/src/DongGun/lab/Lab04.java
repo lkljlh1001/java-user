@@ -163,12 +163,11 @@ public class Lab04 {
 
 			else
 				tax = (int) (salary * 0.25);
-
 		}
 		System.out.println(ismaried);
 
 		if (ismaried == 1) {
-			if (salary > 3000)
+			if (salary > 6000)
 				tax = (int) (salary * 0.1);
 
 			else
@@ -176,6 +175,8 @@ public class Lab04 {
 
 		}
 		System.out.println(ismaried);
+		System.out.println(salary);
+		System.out.println(tax);
 
 		// 프린트 문제 16- 20
 
