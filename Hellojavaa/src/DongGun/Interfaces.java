@@ -1,4 +1,5 @@
 package DongGun;
+//인터페이스는 다중상속이가능 //클래스는 다중상속 ㄴㄴ
 
 public class Interfaces {
 
@@ -11,6 +12,12 @@ public class Interfaces {
 		sjsrv.gettotal();
 		sjsrv.getAverage();
 		sjsrv.getGrade();
+		// 인터페이스 타입 업/다운 캐스팅 가능
+		// 인터페이스 타입 변환
+		// 인터페이스의 참조변수로
+		// 구현한 클래스의 객체를 할당할 수 있음
+		ISungJukService isjsrc = new SungJukServiceImpl();
+
 		// 추상클래스 객체 생성가능?
 		// 추상 메서드를 포함한 클래스를 의미 -객체화 불가!
 		// AbstractClass ac = new AbstractClass(); // 오류
@@ -20,10 +27,11 @@ public class Interfaces {
 }
 
 interface ISungJukService { // 맨앞 I 는 인터페이스를 의미 // 인터페이스 인터페이스명
-	int tot = 0; // 상수 (초기화 필요!!!!!!!!!!!!!)
-	double avg = 0.0;
 
-	void gettotal(); // 추상 메서드
+	int TOT = 0; // 상수 (초기화 필요!!!!!!!!!!!!!) // 대문자로 작성 // public static final 이 생략 되므로 상수취급을 받음
+	double AVG = 0.0;
+
+	abstract void gettotal(); // 추상 메서드
 
 	void getAverage();
 
