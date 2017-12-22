@@ -44,7 +44,6 @@ public class SungJukServiceImpl implements SungJukService {
 	}
 
 	private boolean checkSungJukNo(int no, int size) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
