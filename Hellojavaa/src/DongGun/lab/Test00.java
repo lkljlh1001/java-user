@@ -1,59 +1,32 @@
 package DongGun.lab;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Test00 {
 
 	public static void main(String[] args) throws IOException {
 
-		// # 5- 21
-		final int SIZ = 5;
-		int x = 0;
-		int y = 0;
-		int num = 0;
+		// colelection
+		//  collection은 다른 객체의 묶음을 가진 객체를 의미
+		//  또한, 용기container라고 불리는 collection은 요소를
+		// 저장, 검색, 조작하는 메서드를 제공함
+		//  collection은 자바 프로그래머가 객체를
+		// 쉽게 다룰 수 있게 해줌
 
-		int[][] bingo = new int[SIZ][SIZ];
-		Scanner sc = new Scanner(System.in);
-
-		for (int i = 0; i < SIZ; i++)
-			for (int j = 0; j < SIZ; j++)
-				bingo[i][j] = i * SIZ + j + 1;
-
-		for (int i = 0; i < SIZ; i++) {
-			for (int j = 0; j < SIZ; j++) {
-				x = (int) (Math.random() * SIZ);
-				y = (int) (Math.random() * SIZ);
-
-				int tmp = bingo[i][j];
-				bingo[i][j] = bingo[x][y];
-				bingo[x][y] = tmp;
-
-			} // for ed j
-		} // for ed i
-		do {
-			for (int i = 0; i < SIZ; i++) {
-				for (int j = 0; j < SIZ; j++)
-					System.out.printf(" %2d \n", bingo[i][j]);
-				System.out.println();
-			}
-			System.out.println();
-
-			System.out.printf("1~ %d 의 숫자를 입력하세요. (종료 > 0", SIZ * SIZ);
-			String tmp = sc.nextLine();
-			num = Integer.parseInt(tmp);
-
-			// 입력 받은 숫자와 같은 숫자가 저장된 요소를 찾아서 0 을 저장
-			outer: for (int i = 0; i < SIZ; i++) {
-				for (int j = 0; j < SIZ; j++) {
-					if (bingo[i][j] == num) {
-						bingo[i][j] = 0;
-						break outer; // 2중 반복문을 벗어난다
-					}
-				}
-			}
-		} while (num != 0);
-
+		// Collection 인터페이스는 객체를 함께 묶음
+		//  크기 조절이 안되고 같은 종류의 객체만 묶을 수 있는 배열과
+		// 다른 점은 Collection 은 어떠한 종류의 객체도 더할 수 있고
+		// 초기 크기를 지정하지 않아도 됨
+		//
+		//
+		//
+		// 요소를 추가하려면 add 메서드를 사용하면 됨
+		//  다른 Collection의 구성원을 더하려면 addAll 메서드를 사용
+		//  모든 요소를 제거하려면 clear 메서드를 사용
+		//  요소의 개수를 알아내려면 size 메서드를 호출
+		//  요소가 있는지 확인하려면 isEmpty 메서드를 사용
+		//  요소를 배열로 옮기려면 toArray 메서드를 사용
+		//
+		//
 	}
-
 }
