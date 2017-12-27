@@ -1,8 +1,6 @@
-package project.v2;
+package project.v3;
 
 import java.util.Scanner;
-
-import project.v1.SungJukV0;
 
 public class SungJukMain {
 
@@ -66,7 +64,7 @@ public class SungJukMain {
 		System.out.print(sb.toString());
 
 		Scanner sc = new Scanner(System.in);
-		SungJukV0 sj = new SungJukV0(sc.next(), sc.nextInt(), sc.nextInt(), sc.nextInt());
+		SungJukVO sj = new SungJukVO(sc.next(), sc.nextInt(), sc.nextInt(), sc.nextInt());
 
 		sjsrv.addSungJuk(sj);
 
@@ -112,7 +110,7 @@ public class SungJukMain {
 
 		System.out.print(sb.toString());
 
-		SungJukV0 sj = new SungJukV0(sc.next(), sc.nextInt(), sc.nextInt(), sc.nextInt());
+		SungJukVO sj = new SungJukVO(sc.next(), sc.nextInt(), sc.nextInt(), sc.nextInt());
 
 		sjsrv.modifySungJuk(sj, no);
 
@@ -131,6 +129,13 @@ public class SungJukMain {
 	}
 
 	private static void exitSungJuk() {
+		try {
+			sjsrv.finalize();
+			System.out.println(SAYGOODBYE);
+		} catch (Throwable e) {
+			System.out.println(EXITERROR);
+		}
+
 		System.exit(0);
 	}
 
